@@ -31,9 +31,9 @@ get openFirstClientDetails() {return $('table.crm-navigator-table tbody tr')};
 get editModalPage() {return $('div[class="modal-window user"]')};
 
 //физическая карта
-// get editCardButton() {return $('div[class="client-data"] span[class="editIcon"]')};
-// get editCardField() {return $('div[class="client-data"] span[class="editIcon"]')}
-// get saveButton() {return $('button[name="mat-raised-button"]')}
+get editCardButton() {return $('div[class="client-data"] span[class="editIcon"]')};
+get editCardField() {return $('input[formcontrolname="cardNo"]')}
+get saveButton() {return $('button[name="mat-raised-button"]')}
 
 
 get editSurnameField() {return this.editModalPage.$('input[placeholder="Фамилия"]')};
@@ -50,8 +50,7 @@ get editChildButton() {return $('div[class="block"] span[class="editIcon"]')};
 get childNameButton() {return $('mat-card-actions span[class=mat-button-wrapper]')}; 
 get saveButton() {return $('//mat-dialog-actions/button[contains(text(),"Сохранить")]')};
 
-// get editchildNameField() {return $('app-children-dialog input[class="mat-input-element mat-form-field-autofill-control ng-pristine ng-valid ng-touched"]')};
-
+get editchildNameField() {return $('[formcontrolname="Name"]')};
 
   // второй способ
   async fillForm(testingUser){

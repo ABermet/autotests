@@ -45,14 +45,14 @@ describe('Clients test', () => {
     it('should create new client', async () => {
       await ClientPage.createClientButton.waitForDisplayed({timeout: 10000 });
       await ClientPage.openFirstClientDetails.click();
-      //await ClientPage.editModalPage.waitForDisplayed({timeout: 10000});
+      await ClientPage.editModalPage.waitForDisplayed({timeout: 10000});
 
       //fiz karta
-      // await ClientPage.editCardButton.click(); 
+      await ClientPage.editCardButton.click(); 
+      await browser.pause(200);
+      await ClientPage.editCardField.setValue("445566");
+      await ClientPage.saveButton.click(); 
       // await browser.pause(10000);
-      // await ClientPage.editCardField.setValue("445566");
-      // await browser.pause(10000);
-
 
       await ClientPage.editSurnameField.clearValue();
       await ClientPage.editSurnameField.setValue("NEW SURNAME");
@@ -67,19 +67,13 @@ describe('Clients test', () => {
       await ClientPage.saveButton.click(); 
 
       await ClientPage.editChildButton.click();
-      // await ClientPage.editchildNameField.clearValue();
-      // await ClientPage.editchildNameField.setValue("Lina");
-
-      await ClientPage.childNameButton.click();
       await ClientPage.childNameField.setValue("Lina");
       await ClientPage.childBirthDateField.setValue("01/01/2009")
       await ClientPage.childGenderSelect.click();
       await ClientPage.childGenderSelectOption.click();
       await ClientPage.saveButton.click();
-      //await browser.pause(10000);
-
-
-      await browser.pause(10000);
+      
+      await browser.pause(5000);
        
 
     })
